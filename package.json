@@ -1,0 +1,14 @@
+{
+  "name": "tmdb-qa-automation",
+  "version": "1.0.0",
+  "description": "QA Automation for TMDb Mark as Favorite feature - SimpliDOTS Technical Test",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:headed": "cypress run --headed",
+    "test": "cypress run --spec 'cypress/e2e/tmdb_favorite.cy.js'"
+  },
+  "devDependencies": {
+    "cypress": "^13.0.0"
+  }
+}
