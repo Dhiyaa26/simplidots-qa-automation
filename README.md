@@ -83,20 +83,6 @@ npm run cypress:run:headed
 npm run test
 ```
 
----
-
-## 🎥 Demo / Showcase
-
-> [Link to screen recording will be added here]
-
-The recording covers:
-- Overview of the project structure
-- Running the Cypress test suite
-- Review of test cases in TEST_CASES.md
-- Review of Gherkin scenarios in features/
-
----
-
 ## ✅ Validation Approach
 
 For each automated test, the following are verified:
