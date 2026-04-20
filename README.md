@@ -47,7 +47,6 @@ simplidots-qa-automation/
 - Node.js v16+
 - npm v8+
 - A TMDb account (sign up free at https://www.themoviedb.org/signup)
-- Your TMDb Account ID (find it in: Profile > Settings > Account — or in the URL of your profile page)
 
 ### 1. Clone the Repository
 
@@ -61,17 +60,6 @@ cd simplidots-qa-automation
 ```bash
 npm install
 ```
-
-Edit `cypress.env.json`:
-```json
-{
-  "TMDB_USERNAME": "your_own_actual_username",
-  "TMDB_PASSWORD": "your_own_actual_password",
-  "TMDB_ACCOUNT_ID": "your_account_id_number_if_any"
-}
-```
-
-> ⚠️ **IMPORTANT:** `cypress.env.json` is in `.gitignore` and must NEVER be committed to GitHub.
 
 ### 4. Run Tests
 
