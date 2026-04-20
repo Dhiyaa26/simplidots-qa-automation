@@ -113,13 +113,44 @@ For each automated test, the following are verified:
 
 ---
 
-## 🐛 Bugs & Observations Found During Testing
-
-> *(Fill this in after running manual tests)*
+## 🐛 Bugs Found During Testing
 
 | ID | Severity | Description | Steps to Reproduce | Expected | Actual |
-|---|---|---|---|---|---|
-| BUG-01 | - | - | - | - | - |
+|---|---|---|---|---|---|---|
+| BUG-01 | High | Sorting by Release Date tidak berfungsi dengan benar | Buka Favorites > Pilih sort "Release Date" | Movie diurutkan berdasarkan release date terbaru ke terlama | Movie tidak diurutkan dengan benar sesuai release date |
+| BUG-02 | High | Sort preference tidak tersimpan setelah refresh | Pilih sort > Refresh halaman | Sort preference tetap seperti yang dipilih | Sort kembali ke default после refresh |
+| BUG-03 | High | Sort preference tidak persist setelah re-login | Pilih sort > Logout > Login ulang | Sort preference tetap tersimpan | Sort preference hilang setelah re-login |
+| BUG-04 | High | Sort after adding new movie tidak berfungsi | Set sort by Popularity > Tambah movie baru | Movie baru muncul sesuai popularity | Movie baru tidak muncul di posisi yang benar |
+| BUG-05 | Medium | Remove dari Favorites List tidak langsung update UI | Remove movie dari Favorites page | Movie langsung hilang tanpa refresh | Movie masih tampil sampai page di-refresh |
+| BUG-06 | Medium | Tidak ada guide message untuk login di private page | Akses Favorites tanpa login | Tampilkan pesan/redirect untuk login | Hanya tampil "This page is private" tanpa guide |
+
+---
+
+## 💡 UX/UI Improvements Suggestions
+
+### Favorite Tab & Icons (Profile Page)
+
+1. **Tambah Favorite Tab langsung di Profile List** - Saat ini user harus klik profile > Overview > baru能看到 tab Favorites. UX terlalu panjang. Suggestion: Tambah langsung tab "Favorites" di list tab pada profile page (bukan di profile detail page).
+
+2. **Icon pada setiap Tab** - Tambah icon di samping setiap tab name untuk better discoverability:
+   - Tab "Overview" → icon user/home
+   - Tab "Favorites" → icon heart/love
+   - Tab "Watchlist" → icon bookmark
+   - Karena tidak semua user memperhatikan nama/title pada feature, icon visual lebih mudah dikenali user
+
+3. **Favorite icon discoverability** — Heart icon di movie listing hanya visible on hover (desktop). On mobile, ini sulit ditemukan. Suggestion: Always show small persistent icon atau context menu.
+
+4. **Confirmation on remove** — Tidak ada undo atau konfirmasi saat remove movie dari favorites. Suggestion: Brief "Removed. Undo?" toast akan improve UX.
+
+5. **Sort persistence clarity** — Tidak ada konfirmasi ke user bahwa sort preference disimpan. Suggestion: "Preferences saved" message.
+
+6. **Empty state messaging** — Empty favorites state bisa lebih actionable: "You haven't favorited any movies yet. [Browse Popular Movies →]"
+
+7. **Language selector location** — Language change setting buried di `/settings/general`. Consider quick-switch di top navigation.
+
+8. **No tooltip after mark favorite** — US2-02: Tidak ada tooltip/notif setelah movie added ke favorite. Suggestion: Tambah feedback visual.
+
+9. **Mobile responsive** — Website tidak responsif di mobile viewport. explorer EXP-05 fails.
 
 ---
 
