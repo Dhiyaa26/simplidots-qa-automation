@@ -101,14 +101,14 @@ For each automated test, the following are verified:
 
 ## 🐛 Bugs Found During Testing
 
-| ID | Severity | Description | Steps to Reproduce | Expected | Actual |
-|---|---|---|---|---|---|---|
-| BUG-01 | High | Sorting by Release Date tidak berfungsi dengan benar | Buka Favorites > Pilih sort "Release Date" | Movie diurutkan berdasarkan release date terbaru ke terlama | Movie tidak diurutkan dengan benar sesuai release date |
-| BUG-02 | High | Sort preference tidak tersimpan setelah refresh | Pilih sort > Refresh halaman | Sort preference tetap seperti yang dipilih | Sort kembali ke default после refresh |
-| BUG-03 | High | Sort preference tidak persist setelah re-login | Pilih sort > Logout > Login ulang | Sort preference tetap tersimpan | Sort preference hilang setelah re-login |
-| BUG-04 | High | Sort after adding new movie tidak berfungsi | Set sort by Popularity > Tambah movie baru | Movie baru muncul sesuai popularity | Movie baru tidak muncul di posisi yang benar |
-| BUG-05 | Medium | Remove dari Favorites List tidak langsung update UI | Remove movie dari Favorites page | Movie langsung hilang tanpa refresh | Movie masih tampil sampai page di-refresh |
-| BUG-06 | Medium | Tidak ada guide message untuk login di private page | Akses Favorites tanpa login | Tampilkan pesan/redirect untuk login | Hanya tampil "This page is private" tanpa guide |
+| ID     | Severity | Description                                              | Steps to Reproduce                                  | Expected                                                      | Actual                                                         |
+|--------|----------|----------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------------|----------------------------------------------------------------|
+| BUG-01 | High     | Sorting by Release Date tidak berfungsi dengan benar     | Buka Favorites > Pilih sort "Release Date"          | Movie diurutkan berdasarkan release date terbaru ke terlama   | Movie tidak diurutkan dengan benar sesuai release date         |
+| BUG-02 | High     | Sort preference tidak tersimpan setelah refresh          | Pilih sort > Refresh halaman                        | Sort preference tetap seperti yang dipilih                    | Sort kembali ke default setelah refresh                        |
+| BUG-03 | High     | Sort preference tidak persist setelah re-login           | Pilih sort > Logout > Login ulang                   | Sort preference tetap tersimpan                               | Sort preference hilang setelah re-login                        |
+| BUG-04 | High     | Sort after adding new movie tidak berfungsi              | Set sort by Popularity > Tambah movie baru          | Movie baru muncul sesuai popularity                           | Movie baru tidak muncul di posisi yang benar                   |
+| BUG-05 | Medium   | Remove dari Favorites List tidak langsung update UI      | Remove movie dari Favorites page                    | Movie langsung hilang tanpa refresh                           | Movie masih tampil sampai page di-refresh                      |
+| BUG-06 | Medium   | Tidak ada guide message untuk login di private page      | Akses Favorites tanpa login                         | Tampilkan pesan/redirect untuk login                          | Hanya tampil "This page is private" tanpa guide                |
 
 ---
 
