@@ -13,7 +13,9 @@ module.exports = defineConfig({
     screenshotOnRunFailure: true,
     specPattern: 'cypress/e2e/**/*.cy.js',
     setupNodeEvents(on, config) {
-      // implement node event listeners here if needed
+      on('after:screenshot', (details) => {
+        console.log('Screenshot taken:', details.path);
+      });
     },
   },
   env: {

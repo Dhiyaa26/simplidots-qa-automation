@@ -1,3 +1,56 @@
+# Feature: TMDb - Basic Page Access Tests
+# Author: Dhiyaa Ulhaq
+# Date: 2026
+
+Feature: TMDb Basic Page Access
+  As a user of The Movie Database (TMDb)
+  I want to be able to access various pages on the platform
+  So that I can browse movies and manage my account
+
+  Background:
+    Given the base URL is "https://www.themoviedb.org"
+    And the test movie ID is "550"
+
+  @TC-01 @smoke @page-access
+  Scenario: TC-01 | Can access TMDb homepage
+    Given I navigate to the TMDb homepage
+    When the page has loaded
+    Then the page body should be visible
+    And a screenshot should be captured
+
+  @TC-02 @smoke @page-access
+  Scenario: TC-02 | Can access movie listing page
+    Given I navigate to the movie listing page "/movie"
+    When the page has loaded
+    Then the page body should be visible
+    And a screenshot should be captured
+
+  @TC-03 @smoke @page-access @movie-detail
+  Scenario: TC-03 | Can access movie detail page
+    Given I navigate to the movie detail page for movie ID "550"
+    When the page has loaded
+    Then the page body should be visible
+    And a screenshot should be captured
+
+  @TC-04 @smoke @page-access @authentication
+  Scenario: TC-04 | Can access login page
+    Given I navigate to the login page "/login"
+    When the page has loaded
+    Then the page body should be visible
+    And a screenshot should be captured
+
+  @TC-05 @smoke @page-access @authentication @security
+  Scenario: TC-05 | Unauthenticated access to account redirects or shows login
+    Given I am not logged in
+    When I navigate to the account page "/account"
+    And the page has loaded
+    Then the page body should be visible
+    And the user should be redirected to the login page or shown a login prompt
+    And a screenshot should be captured
+
+========== other test scenario | notes : this tests scenario below has not implemented yet on automation by cypress due some limitations
+so this is to consider the future test cases automation =============
+
 # features/tmdb_favorite.feature
 # TMDb - Mark as Favorite Feature
 # Format: Gherkin (BDD)

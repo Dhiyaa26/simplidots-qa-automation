@@ -196,3 +196,29 @@ Jika dilakukan pengembangan lebih lanjut terhadap automation test, terdapat bebe
 - Beberapa skenario lebih efektif dan efisien jika tetap dilakukan melalui manual exploratory testing
 
 Dengan mempertimbangkan hal-hal tersebut, pendekatan yang digunakan saat ini berfokus pada kestabilan test untuk skenario utama (critical path), sambil tetap terus saya kembangkan ke depannya.
+
+---
+
+## Gherkin Format vs Automation Coverage
+
+Terdapat file `features/tmdb_favorite.feature` yang berisi skenario dalam format Gherkin (BDD). File ini adalah **dokumentasi** yang menjelaskan test scenarios dalam bahasa yang mudah dipahami oleh stakeholder/non-programmer.
+
+### ⚠️ Penting: Perbedaan Coverage
+
+| Komponen | Coverage |
+|----------|----------|
+| **TEST_CASES.md** | 43 test cases (manual + automated) ✅ Lengkap |
+| **Gherkin feature file** | ~27 skenario (dokumentasi saja) |
+| **Cypress automation** | 5 basic page access tests |
+
+**Jelaskan:** File Gherkin mendeskripsikan apa yang *seharusnya* diuji, tetapi file Cypress belum mengimplementasikan mayoritas dari skenario tersebut. Mengapa:
+
+1. **Limitasi third-party website** - TMDb bukan environment testing khusus, sehingga:
+   - Struktur DOM dinamis dan bisa berubah sewaktu-waktu
+   - CSS selector yang digunakan tidak stabil
+   - Tidak ada `data-testid` attribute untuk locator yang reliable
+
+2. **API authentication** - Tanpa TMDb API key, sulit melakukan prepopulasi data sebelum test (misalnya clear favorites sebelum test baru)
+
+3. **Focus pada stability** - pendekatan saat ini fokus pada basic page access tests yang stabil untuk demonstrate automation capability, bukan full coverage
+

@@ -8,7 +8,13 @@ const BASE_URL = 'https://www.themoviedb.org';
 const TEST_MOVIE_ID = '550';
 
 describe('TMDb - Basic Page Access Tests', () => {
-  
+
+  afterEach(function() {
+    const testName = this.currentTest?.title || 'unknown';
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    cy.screenshot(`result-${testName}-${timestamp}`, { capture: 'viewport' });
+  });
+
   it('TC-01 | Can access TMDb homepage', () => {
     cy.visit(BASE_URL, {failOnStatusCode: false});
     cy.wait(2000);
