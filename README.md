@@ -155,5 +155,3 @@ Based on exploration of the TMDb feature:
 5. **Language selector location** — The language change setting is buried in `/settings/general`. Consider adding a quick-switch in the top navigation for better accessibility.
 
 ---
-
-*Made with <3 for SimpliDOTS QA Internship Application*
